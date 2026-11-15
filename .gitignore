@@ -1,0 +1,11 @@
+build/
+*.class
+testdata/noise.txt
+
+# Signing keys never go in this repo. They live in GitHub Secrets.
+*.jks
+*.keystore
+keystore.properties
+local.properties
+.gradle/
+.idea/

@@ -1,0 +1,112 @@
+AutoPay Hunter, scan of 15 Nov 2026
+Read 121 messages from banks and companies. Skipped 1 from people without reading them.
+Subscriptions cost you ₹44,866 + $240 a year (some estimated).
+Bills, EMIs and SIPs on autopay: ₹1,29,278 a year.
+
+== Needs you now (3) ==
+* LinkedIn Premium: Cancelled on 28 Sep, but charged ₹1,899 on 30 Oct
+    - Card autopay on your HDFC Bank card ••4321
+    - Money left after the cancel. Ask HDFC Bank to reverse it, and keep the cancel SMS as proof.
+    > Stop LinkedIn Premium and get the money back
+* ZEE5: Free trial ends tomorrow. Then ₹299 a month
+    - Card autopay on your ICICI Bank card ••9012
+    - Cancel today to avoid the ₹299 charge.
+    > Cancel the autopay on your ICICI Bank card ••9012 (https://www.sihub.in/managesi/icici)
+* Audible: ₹199 a month. Last payment failed on 12 Nov
+    - UPI AutoPay from your Axis Bank account ••1357, set up in Google Pay
+    - If you meant to stop it, cancel it. A failed autopay can still go through when they retry.
+    - That's ₹2,388 a year.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens Google Pay]
+
+== Free trials (1) ==
+* Swiggy One: Free trial since 10 Nov. Can turn into up to ₹149 a month
+    - UPI AutoPay from your SBI account ••5678, set up in PhonePe
+    - We don't know when the trial ends. Most last 7 to 30 days, so it could turn paid as soon as 17 Nov.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens PhonePe]
+
+== Subscriptions (9) ==
+* ChatGPT: ₹1,999 a month. Next around 14 Dec
+    - Charged to your HDFC Bank card ••4321
+    - That's ₹23,988 a year.
+    - Found from repeat charges. There's no autopay SMS, so your card is probably saved with ChatGPT.
+    > Cancel inside ChatGPT
+* Netflix: ₹649 a month. Next around 12 Dec
+    - Card autopay on your HDFC Bank card ••4321
+    - That's ₹7,788 a year.
+    > Cancel the autopay on your HDFC Bank card ••4321 (https://www.sihub.in/managesi/hdfc)
+* YouTube Premium: ₹299 a month. Next around 5 Dec
+    - UPI AutoPay from your Axis Bank account ••1357, set up in Google Pay
+    - Price went up from ₹189 to ₹299 on 5 Sep.
+    - That's ₹3,588 a year.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens Google Pay]
+* Google One: ₹130 a month. Next around 21 Nov
+    - UPI AutoPay from your Kotak Bank account ••2468, set up in Paytm
+    - That's ₹1,560 a year.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens Paytm]
+* Amazon Prime: ₹1,499 a year. Renews around 12 Mar
+    - Card autopay on your ICICI Bank card ••9012
+    > Cancel the autopay on your ICICI Bank card ••9012 (https://www.sihub.in/managesi/icici)
+* Spotify: ₹119 a month. Next around 3 Dec
+    - UPI AutoPay from your SBI account ••5678, set up in PhonePe
+    - You also pay Spotify from your HDFC Bank card ••4321. Paying twice?
+    - That's ₹1,428 a year.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens PhonePe]
+* Spotify: ₹119 a month. Next around 20 Nov
+    - Card autopay on your HDFC Bank card ••4321
+    - You also pay Spotify from your SBI account ••5678. Paying twice?
+    - That's ₹1,428 a year.
+    > Cancel the autopay on your HDFC Bank card ••4321 (https://www.sihub.in/managesi/hdfc)
+* Times Prime: ₹1,199 a year. Renews around 1 Aug
+    - Card autopay on your Canara Bank card
+    > Cancel the autopay on your Canara Bank card
+* Claude: $20 a month. Next around 22 Nov
+    - Charged to your HDFC Bank card ••4321
+    - That's $240 a year.
+    - Found from repeat charges. There's no autopay SMS, so your card is probably saved with Claude.
+    > Cancel inside Claude
+
+== Bills, EMIs and investments (5) ==
+* HDFC Mutual Fund: ₹5,000 a month. Next around 5 Dec
+    - Bank mandate (NACH) on your IDFC FIRST Bank account ••7890
+    - That's ₹60,000 a year.
+    > Cancel the bank mandate
+    ! This stops future SIP instalments. What you've already invested stays.
+* Bajaj Finance: ₹2,345 a month. Next around 2 Dec
+    - Bank mandate (NACH) on your HDFC Bank account ••8642
+    - That's ₹28,140 a year.
+    > Cancel the bank mandate
+    ! This looks like a loan EMI. Stopping it doesn't close the loan, and a missed EMI can bring bounce charges and hurt your credit score.
+* MSEDCL electricity: About ₹1,710 a month, changes with each bill. Next around 8 Dec
+    - UPI AutoPay from your HDFC Bank account ••8642, set up in Google Pay
+    - Recent bills ranged from ₹1,673 to ₹2,105.
+    - That's about ₹21,500 a year.
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens Google Pay]
+    ! The bill doesn't stop with the autopay. You'll need to pay it yourself each time.
+* HDFC ERGO: ₹12,450 a year. Renews around 20 Jan
+    - Card autopay on your ICICI Bank card ••9012
+    > Cancel the autopay on your ICICI Bank card ••9012 (https://www.sihub.in/managesi/icici)
+    ! Stopping this can let your insurance policy lapse. Make sure you pay another way.
+* Airtel: ₹599 a month. Next charge 18 Nov
+    - Card autopay on your SBI Card ••3344
+    - That's ₹7,188 a year.
+    > Cancel the autopay on your SBI Card ••3344 (https://www.sbicard.com/si)
+    ! The bill doesn't stop with the autopay. You'll need to pay it yourself each time.
+
+== Not charging lately, but still open (1) ==
+* Gaana: No charge since 5 Jun, but it can still charge you
+    - UPI AutoPay from your Kotak Bank account ••2468, set up in Paytm
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens Paytm]
+
+== Paused (1) ==
+* JioHotstar: Paused until 31 Dec. Normally ₹299 a month
+    - UPI AutoPay from your SBI account ••5678, set up in PhonePe
+    > Cancel in any UPI app (https://upihelp.npci.org.in) [opens PhonePe]
+
+== Cancelled (1) ==
+* Cult.fit: Cancelled on 2 Sep. No charge since
+    - UPI AutoPay from your Kotak Bank account ••2468, set up in Paytm
+
+== We couldn't read these (1) ==
+? TM-ACTFBR-S: Says a charge is coming, but not when
+    "AutoPay Alert: Your subscription with ACT Fibernet is set for renewal. Ref: 99881"
+

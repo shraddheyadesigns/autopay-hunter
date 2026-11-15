@@ -1,0 +1,457 @@
+# AutoPay Hunter test inbox
+# A made-up but realistic phone inbox, May to Nov 2026. "Today" is 15 Nov 2026.
+# Formats are modelled on real Indian bank SMS. Names, numbers and IDs are fake.
+#
+# Block format:
+#   @ <yyyy-mm-dd hh:mm> | <sender> | <expected>
+#   <body, one or more lines>
+#   <blank line>
+# expected = CREATED MODIFIED PAUSED RESUMED REVOKED EXPIRED FAILED_SETUP
+#            UPCOMING DEBITED DEBIT_FAILED IGNORE SUSPECT
+
+# ---------- 1. Netflix on HDFC credit card (card standing instruction) ----------
+@ 2026-05-12 09:08 | AX-HDFCBK-T | IGNORE
+483920 is the OTP for registering e-mandate on HDFC Bank Card XX4321 for NETFLIX. Valid for 5 mins. Do not share it with anyone.
+
+@ 2026-05-12 09:10 | AX-HDFCBK-S | CREATED
+Your E-mandate (SI) for NETFLIX, Rs 649.00, Monthly, on HDFC Bank Credit Card XX4321 is successfully registered. SI ID: HDFCSI82736451. To view/cancel visit https://www.sihub.in/managesi/hdfc
+
+@ 2026-06-12 09:14 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-06-12:09:14:51 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-07-12 09:11 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-07-12:09:11:02 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-08-12 09:15 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-08-12:09:15:40 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-09-12 09:12 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-09-12:09:12:13 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-10-11 10:00 | AX-HDFCBK-S | UPCOMING
+Dear Customer, Rs.649.00 will be debited from your HDFC Bank Credit Card XX4321 on 12-10-2026 towards NETFLIX as per your e-mandate (SI ID HDFCSI82736451). To opt-out visit https://www.sihub.in/managesi/hdfc - HDFC Bank
+
+@ 2026-10-12 09:13 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-10-12:09:13:27 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-11-11 10:00 | AX-HDFCBK-S | UPCOMING
+Dear Customer, Rs.649.00 will be debited from your HDFC Bank Credit Card XX4321 on 12-11-2026 towards NETFLIX as per your e-mandate (SI ID HDFCSI82736451). To opt-out visit https://www.sihub.in/managesi/hdfc - HDFC Bank
+
+@ 2026-11-12 09:16 | AX-HDFCBK-S | DEBITED
+Spent Rs.649 On HDFC Bank Card 4321 At NETFLIX.COM On 2026-11-12:09:16:05 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+# ---------- 2. Spotify by UPI AutoPay, set up in PhonePe, SBI account ----------
+@ 2026-06-03 07:01 | JD-SBIUPI-S | CREATED
+Dear UPI user, your UPI-Mandate for Rs.119.00 towards SPOTIFY INDIA is successfully created. Frequency: MONTHLY, UMN: 4f8a2c1e9b7d4e0fa1c3d5b7e9f1a2c4@ybl -SBI
+
+@ 2026-06-03 07:02 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Jun26 trf to SPOTIFY INDIA Refno 615412345678. If not u? call 1800111109. -SBI
+
+@ 2026-07-03 06:40 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Jul26 trf to SPOTIFY INDIA Refno 618412345678. If not u? call 1800111109. -SBI
+
+@ 2026-08-03 06:41 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Aug26 trf to SPOTIFY INDIA Refno 621512345678. If not u? call 1800111109. -SBI
+
+@ 2026-09-03 06:39 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Sep26 trf to SPOTIFY INDIA Refno 624612345678. If not u? call 1800111109. -SBI
+
+@ 2026-10-01 18:20 | JD-SBIUPI-S | UPCOMING
+Dear Customer, your A/C X5678 will be debited Rs.119.00 on 03-10-2026 towards SPOTIFY INDIA for UPI AutoPay. UMN 4f8a2c1e9b7d4e0fa1c3d5b7e9f1a2c4@ybl. To revoke, use your UPI app -SBI
+
+@ 2026-10-03 06:42 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Oct26 trf to SPOTIFY INDIA Refno 627612345678. If not u? call 1800111109. -SBI
+
+@ 2026-11-01 18:22 | JD-SBIUPI-S | UPCOMING
+Dear Customer, your A/C X5678 will be debited Rs.119.00 on 03-11-2026 towards SPOTIFY INDIA for UPI AutoPay. UMN 4f8a2c1e9b7d4e0fa1c3d5b7e9f1a2c4@ybl. To revoke, use your UPI app -SBI
+
+@ 2026-11-03 06:40 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 119.0 on date 03Nov26 trf to SPOTIFY INDIA Refno 630712345678. If not u? call 1800111109. -SBI
+
+# ---------- 3. Spotify AGAIN, on the HDFC card (duplicate) ----------
+@ 2026-08-20 11:30 | AX-HDFCBK-S | CREATED
+Your E-mandate (SI) for SPOTIFY INDIA, Rs 119.00, Monthly, on HDFC Bank Credit Card XX4321 is successfully registered. SI ID: HDFCSI90817263. To view/cancel visit https://www.sihub.in/managesi/hdfc
+
+@ 2026-08-20 11:31 | AX-HDFCBK-S | DEBITED
+Spent Rs.119 On HDFC Bank Card 4321 At SPOTIFY SI On 2026-08-20:11:31:09 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-09-20 11:30 | AX-HDFCBK-S | DEBITED
+Spent Rs.119 On HDFC Bank Card 4321 At SPOTIFY SI On 2026-09-20:11:30:44 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-10-20 11:32 | AX-HDFCBK-S | DEBITED
+Spent Rs.119 On HDFC Bank Card 4321 At SPOTIFY SI On 2026-10-20:11:32:18 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+# ---------- 4. YouTube Premium by UPI, set up in Google Pay, Axis account. Price went up ----------
+@ 2026-06-05 08:00 | VM-AXISBK-S | CREATED
+UPI Mandate created successfully
+Merchant: YouTube Premium (Google)
+Amount: up to INR 189.00
+Frequency: Monthly
+A/c no. XX1357
+UMN: 9c8b7a6d5e4f3a2b1c0d9e8f7a6b5c4d@okaxis
+- Axis Bank
+
+@ 2026-06-05 08:02 | VM-AXISBK-S | DEBITED
+INR 189.00 debited
+A/c no. XX1357
+05-06-26, 08:02:11
+UPI/P2M/615612345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-07-05 08:02 | VM-AXISBK-S | DEBITED
+INR 189.00 debited
+A/c no. XX1357
+05-07-26, 08:02:31
+UPI/P2M/618612345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-08-05 08:03 | VM-AXISBK-S | DEBITED
+INR 189.00 debited
+A/c no. XX1357
+05-08-26, 08:03:02
+UPI/P2M/621712345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-08-28 19:44 | VM-AXISBK-S | MODIFIED
+UPI Mandate modified: YouTube Premium, new max amount INR 299.00, A/c no. XX1357. UMN: 9c8b7a6d5e4f3a2b1c0d9e8f7a6b5c4d@okaxis - Axis Bank
+
+@ 2026-09-05 08:02 | VM-AXISBK-S | DEBITED
+INR 299.00 debited
+A/c no. XX1357
+05-09-26, 08:02:50
+UPI/P2M/624812345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-10-05 08:02 | VM-AXISBK-S | DEBITED
+INR 299.00 debited
+A/c no. XX1357
+05-10-26, 08:02:19
+UPI/P2M/627812345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-11-04 08:00 | VM-AXISBK-S | UPCOMING
+UPI AutoPay alert: INR 299.00 will be debited from A/c no. XX1357 on 05-11-26 for YouTube Premium. UMN 9c8b7a6d5e4f3a2b1c0d9e8f7a6b5c4d@okaxis. To pause/cancel, open any UPI app > AutoPay. - Axis Bank
+
+@ 2026-11-05 08:02 | VM-AXISBK-S | DEBITED
+INR 299.00 debited
+A/c no. XX1357
+05-11-26, 08:02:44
+UPI/P2M/630912345678/YouTube Premium
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+# ---------- 5. Amazon Prime, yearly, ICICI credit card. Plus normal Amazon shopping on the same card ----------
+@ 2026-03-12 13:20 | AD-ICICIT-S | CREATED
+Standing Instruction registered on ICICI Bank Credit Card XX9012 for AMAZON PRIME, Yearly, Max Amount INR 1,499.00. Mandate ID: ICIC0MD123456. Manage at www.sihub.in/managesi/icici
+
+@ 2026-03-12 13:21 | AD-ICICIT-S | DEBITED
+INR 1,499.00 spent using ICICI Bank Card XX9012 on 12-Mar-26 on AMAZON PRIME. Avl Limit: INR 1,23,456.00. If not you, call 1800 2662/SMS BLOCK 9012 to 9215676766.
+
+@ 2026-10-02 21:10 | AD-ICICIT-S | DEBITED
+INR 2,349.00 spent using ICICI Bank Card XX9012 on 02-Oct-26 on AMAZON. Avl Limit: INR 1,19,876.00. If not you, call 1800 2662/SMS BLOCK 9012 to 9215676766.
+
+@ 2026-11-01 15:45 | AD-ICICIT-S | DEBITED
+INR 899.00 spent using ICICI Bank Card XX9012 on 01-Nov-26 on AMAZON. Avl Limit: INR 1,18,977.00. If not you, call 1800 2662/SMS BLOCK 9012 to 9215676766.
+
+# ---------- 6. Google One by UPI, set up in Paytm, Kotak account ----------
+@ 2026-07-21 10:05 | AX-KOTAKB-S | CREATED
+Your UPI AutoPay mandate of Rs.130.00 (monthly) to Google One from Kotak Bank AC X2468 is now active. UMN: a1b2c3d4e5f60718293a4b5c6d7e8f90@ptyes
+
+@ 2026-07-21 10:06 | AX-KOTAKB-S | DEBITED
+Sent Rs.130.00 from Kotak Bank AC X2468 to googleone@axisbank on 21-07-26.UPI Ref 620212345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-08-21 10:01 | AX-KOTAKB-S | DEBITED
+Sent Rs.130.00 from Kotak Bank AC X2468 to googleone@axisbank on 21-08-26.UPI Ref 623312345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-09-21 10:02 | AX-KOTAKB-S | DEBITED
+Sent Rs.130.00 from Kotak Bank AC X2468 to googleone@axisbank on 21-09-26.UPI Ref 626412345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-10-21 10:00 | AX-KOTAKB-S | DEBITED
+Sent Rs.130.00 from Kotak Bank AC X2468 to googleone@axisbank on 21-10-26.UPI Ref 629412345678. Not you, https://kotak.com/KBANKT/Fraud
+
+# ---------- 7. Cult.fit, cancelled properly in Sept. No charge since ----------
+@ 2026-05-01 06:30 | AX-KOTAKB-S | CREATED
+Your UPI AutoPay mandate of Rs.999.00 (monthly) to CULTFIT from Kotak Bank AC X2468 is now active. UMN: c0ffee11223344556677889900aabbcc@ptyes
+
+@ 2026-06-01 06:31 | AX-KOTAKB-S | DEBITED
+Sent Rs.999.00 from Kotak Bank AC X2468 to cultfit.rzp@icici on 01-06-26.UPI Ref 615212345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-07-01 06:30 | AX-KOTAKB-S | DEBITED
+Sent Rs.999.00 from Kotak Bank AC X2468 to cultfit.rzp@icici on 01-07-26.UPI Ref 618212345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-08-01 06:32 | AX-KOTAKB-S | DEBITED
+Sent Rs.999.00 from Kotak Bank AC X2468 to cultfit.rzp@icici on 01-08-26.UPI Ref 621312345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-09-02 22:15 | AX-KOTAKB-S | REVOKED
+Your UPI AutoPay mandate to CULTFIT (Cure.fit Healthcare) of Rs.999.00 has been revoked successfully. UMN: c0ffee11223344556677889900aabbcc@ptyes -Kotak Bank
+
+# ---------- 8. LinkedIn Premium. Cancelled in Sept, still charged in Oct ----------
+@ 2026-06-30 12:00 | AX-HDFCBK-S | CREATED
+Your E-mandate (SI) for LINKEDIN, Rs 1899.00, Monthly, on HDFC Bank Credit Card XX4321 is successfully registered. SI ID: HDFCSI55512345.
+
+@ 2026-06-30 12:01 | AX-HDFCBK-S | DEBITED
+Spent Rs.1899 On HDFC Bank Card 4321 At LINKEDIN SINGAPORE On 2026-06-30:12:01:15 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-07-30 12:02 | AX-HDFCBK-S | DEBITED
+Spent Rs.1899 On HDFC Bank Card 4321 At LINKEDIN SINGAPORE On 2026-07-30:12:02:41 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-08-30 12:01 | AX-HDFCBK-S | DEBITED
+Spent Rs.1899 On HDFC Bank Card 4321 At LINKEDIN SINGAPORE On 2026-08-30:12:01:56 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-09-28 20:40 | AX-HDFCBK-S | REVOKED
+Your E-mandate (SI) for LINKEDIN on HDFC Bank Credit Card XX4321 has been cancelled as per your request. SI ID: HDFCSI55512345 - HDFC Bank
+
+@ 2026-10-30 12:03 | AX-HDFCBK-S | DEBITED
+Spent Rs.1899 On HDFC Bank Card 4321 At LINKEDIN SINGAPORE On 2026-10-30:12:03:12 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+# ---------- 9. ChatGPT Plus on the card. No mandate SMS at all ----------
+@ 2026-08-14 02:10 | AX-HDFCBK-S | DEBITED
+Spent Rs.1999 On HDFC Bank Card 4321 At OPENAI *CHATGPT SUBSCR On 2026-08-14:02:10:33 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-09-14 02:11 | AX-HDFCBK-S | DEBITED
+Spent Rs.1999 On HDFC Bank Card 4321 At OPENAI *CHATGPT SUBSCR On 2026-09-14:02:11:05 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-10-14 02:10 | AX-HDFCBK-S | DEBITED
+Spent Rs.1999 On HDFC Bank Card 4321 At OPENAI *CHATGPT SUBSCR On 2026-10-14:02:10:12 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-11-14 02:12 | AX-HDFCBK-S | DEBITED
+Spent Rs.1999 On HDFC Bank Card 4321 At OPENAI *CHATGPT SUBSCR On 2026-11-14:02:12:47 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+# ---------- 10. Claude in dollars on the card ----------
+@ 2026-09-22 04:30 | AX-HDFCBK-S | DEBITED
+Spent USD 20.00 On HDFC Bank Card 4321 At CLAUDE.AI SUBSCRIPTION On 2026-09-22:04:30:10 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+@ 2026-10-22 04:31 | AX-HDFCBK-S | DEBITED
+Spent USD 20.00 On HDFC Bank Card 4321 At CLAUDE.AI SUBSCRIPTION On 2026-10-22:04:31:52 Not You? To Block+Reissue Call 18002586161/SMS BLOCK CC 4321 to 7308080808
+
+# ---------- 11. Mutual fund SIP by eNACH, IDFC First account ----------
+@ 2026-04-20 16:00 | VK-IDFCFB-S | CREATED
+Your e-NACH mandate (UMRN IDFB7000001234567) for max INR 10,000.00 Monthly in favour of HDFC MUTUAL FUND is registered on A/C XXXXXXX7890. -IDFC FIRST Bank
+
+@ 2026-05-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/05/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 41,200.10 - IDFC FIRST Bank
+
+@ 2026-06-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/06/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 36,980.55 - IDFC FIRST Bank
+
+@ 2026-07-06 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 06/07/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 33,011.00 - IDFC FIRST Bank
+
+@ 2026-08-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/08/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 29,876.90 - IDFC FIRST Bank
+
+@ 2026-09-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/09/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 26,543.20 - IDFC FIRST Bank
+
+@ 2026-10-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/10/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 24,100.75 - IDFC FIRST Bank
+
+@ 2026-11-05 09:00 | VK-IDFCFB-S | DEBITED
+Your A/C XXXXXXX7890 is debited by INR 5,000.00 on 05/11/2026 towards NACH DR - HDFC MUTUAL FUND SIP. New Bal: INR 23,456.78 - IDFC FIRST Bank
+
+# ---------- 12. Loan EMI by ACH, HDFC savings. No setup SMS in the inbox ----------
+@ 2026-07-02 08:00 | AX-HDFCBK-S | DEBITED
+Amt Debited Rs.2345.00 From HDFC Bank A/c **8642 On 02/07/26 Info: ACH D- BAJAJ FINANCE LTD-P400ABC1234567
+
+@ 2026-08-02 08:00 | AX-HDFCBK-S | DEBITED
+Amt Debited Rs.2345.00 From HDFC Bank A/c **8642 On 02/08/26 Info: ACH D- BAJAJ FINANCE LTD-P400ABC1234567
+
+@ 2026-09-02 08:00 | AX-HDFCBK-S | DEBITED
+Amt Debited Rs.2345.00 From HDFC Bank A/c **8642 On 02/09/26 Info: ACH D- BAJAJ FINANCE LTD-P400ABC1234567
+
+@ 2026-10-02 08:00 | AX-HDFCBK-S | DEBITED
+Amt Debited Rs.2345.00 From HDFC Bank A/c **8642 On 02/10/26 Info: ACH D- BAJAJ FINANCE LTD-P400ABC1234567
+
+@ 2026-11-02 08:00 | AX-HDFCBK-S | DEBITED
+Amt Debited Rs.2345.00 From HDFC Bank A/c **8642 On 02/11/26 Info: ACH D- BAJAJ FINANCE LTD-P400ABC1234567
+
+# ---------- 13. Electricity bill by UPI, amount changes every month ----------
+@ 2026-06-01 20:00 | AX-HDFCBK-S | CREATED
+UPI-Mandate created: MSEDCL Electricity Bill, A/c **8642, Frequency: As Presented, Amount up to Rs.5,000.00. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank - HDFC Bank
+
+@ 2026-07-08 07:00 | AX-HDFCBK-S | DEBITED
+UPI Mandate: Rs.1,842.00 debited from HDFC Bank A/c **8642 to MSEDCL on 08-07-26. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank. Not you? Call 18002586161 - HDFC Bank
+
+@ 2026-08-08 07:00 | AX-HDFCBK-S | DEBITED
+UPI Mandate: Rs.2,105.00 debited from HDFC Bank A/c **8642 to MSEDCL on 08-08-26. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank. Not you? Call 18002586161 - HDFC Bank
+
+@ 2026-09-08 07:00 | AX-HDFCBK-S | DEBITED
+UPI Mandate: Rs.1,990.50 debited from HDFC Bank A/c **8642 to MSEDCL on 08-09-26. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank. Not you? Call 18002586161 - HDFC Bank
+
+@ 2026-10-08 07:00 | AX-HDFCBK-S | DEBITED
+UPI Mandate: Rs.1,673.00 debited from HDFC Bank A/c **8642 to MSEDCL on 08-10-26. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank. Not you? Call 18002586161 - HDFC Bank
+
+@ 2026-11-08 07:00 | AX-HDFCBK-S | DEBITED
+UPI Mandate: Rs.1,710.00 debited from HDFC Bank A/c **8642 to MSEDCL on 08-11-26. UMN: 77aa88bb99cc00dd11ee22ff33aa44bb@okhdfcbank. Not you? Call 18002586161 - HDFC Bank
+
+# ---------- 14. Airtel postpaid on SBI Card. Next charge already announced ----------
+@ 2026-08-18 09:00 | BP-SBICRD-S | DEBITED
+Rs.599.00 spent on your SBI Credit Card ending 3344 at AIRTEL POSTPAID on 18/08/26. Trxn. not done by you? Report at https://sbicard.com/Dispute
+
+@ 2026-09-18 09:00 | BP-SBICRD-S | DEBITED
+Rs.599.00 spent on your SBI Credit Card ending 3344 at AIRTEL POSTPAID on 18/09/26. Trxn. not done by you? Report at https://sbicard.com/Dispute
+
+@ 2026-10-18 09:00 | BP-SBICRD-S | DEBITED
+Rs.599.00 spent on your SBI Credit Card ending 3344 at AIRTEL POSTPAID on 18/10/26. Trxn. not done by you? Report at https://sbicard.com/Dispute
+
+@ 2026-11-15 10:00 | BP-SBICRD-S | UPCOMING
+Dear Cardholder, Rs.599.00 will be charged on your SBI Credit Card ending 3344 on 18-11-2026 towards AIRTEL POSTPAID as per standing instruction. To opt out visit https://www.sbicard.com/si
+
+# ---------- 15. ZEE5 free trial on ICICI card. Turns paid TOMORROW ----------
+@ 2026-11-09 21:00 | AD-ICICIT-S | CREATED
+Standing Instruction registered on ICICI Bank Credit Card XX9012 for ZEE5, Monthly, Max Amount INR 299.00. Mandate ID: ICIC0MD778899. Manage at www.sihub.in/managesi/icici
+
+@ 2026-11-09 21:01 | AD-ICICIT-S | DEBITED
+INR 2.00 spent using ICICI Bank Card XX9012 on 09-Nov-26 on ZEE5. Avl Limit: INR 1,21,105.00. If not you, call 1800 2662/SMS BLOCK 9012 to 9215676766.
+
+@ 2026-11-10 09:00 | AD-ICICIT-S | IGNORE
+INR 2.00 reversed to ICICI Bank Card XX9012 on 10-Nov-26 from ZEE5. Avl Limit: INR 1,21,107.00.
+
+@ 2026-11-15 08:30 | AD-ICICIT-S | UPCOMING
+Your ICICI Bank Credit Card XX9012 will be charged INR 299.00 on 16-Nov-26 towards ZEE5 under Standing Instruction (Mandate ID ICIC0MD778899). To opt out, visit www.sihub.in/managesi/icici
+
+# ---------- 16. Swiggy One free trial by UPI. Plus normal Swiggy food orders ----------
+@ 2026-11-10 13:00 | JD-SBIUPI-S | CREATED
+Dear UPI user, your UPI-Mandate for Rs.1.00 towards SWIGGY ONE is successfully created. Frequency: MONTHLY, Max Amount Rs.149.00, UMN: 5a5a6b6b7c7c8d8d9e9e0f0f1a1a2b2b@ybl -SBI
+
+@ 2026-11-10 13:01 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 1.0 on date 10Nov26 trf to SWIGGY ONE Refno 631412345678. If not u? call 1800111109. -SBI
+
+@ 2026-10-20 20:45 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 347.0 on date 20Oct26 trf to SWIGGY Refno 629312345678. If not u? call 1800111109. -SBI
+
+@ 2026-11-02 21:10 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 512.0 on date 02Nov26 trf to SWIGGY Refno 630612345678. If not u? call 1800111109. -SBI
+
+@ 2026-11-12 20:30 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 289.0 on date 12Nov26 trf to SWIGGY Refno 631612345678. If not u? call 1800111109. -SBI
+
+# ---------- 17. Audible. Last payment failed (low balance) ----------
+@ 2026-08-12 06:00 | VM-AXISBK-S | CREATED
+UPI Mandate created successfully
+Merchant: Audible
+Amount: up to INR 199.00
+Frequency: Monthly
+A/c no. XX1357
+UMN: 3e3e4f4f5a5a6b6b7c7c8d8d9e9e0f0f@okaxis
+- Axis Bank
+
+@ 2026-08-12 06:01 | VM-AXISBK-S | DEBITED
+INR 199.00 debited
+A/c no. XX1357
+12-08-26, 06:01:02
+UPI/P2M/622412345678/Audible
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-09-12 06:00 | VM-AXISBK-S | DEBITED
+INR 199.00 debited
+A/c no. XX1357
+12-09-26, 06:00:41
+UPI/P2M/625512345678/Audible
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-10-12 06:00 | VM-AXISBK-S | DEBITED
+INR 199.00 debited
+A/c no. XX1357
+12-10-26, 06:00:12
+UPI/P2M/628512345678/Audible
+Not you? SMS BLOCKUPI Cust ID to 919951860002
+Axis Bank
+
+@ 2026-11-12 06:00 | VM-AXISBK-S | DEBIT_FAILED
+UPI AutoPay debit of INR 199.00 for AUDIBLE failed due to insufficient balance in A/c no. XX1357. UMN: 3e3e4f4f5a5a6b6b7c7c8d8d9e9e0f0f@okaxis - Axis Bank
+
+# ---------- 18. Gaana. Stopped charging in June, but the mandate is still open ----------
+@ 2026-02-05 11:00 | AX-KOTAKB-S | CREATED
+Your UPI AutoPay mandate of Rs.99.00 (monthly) to GAANA from Kotak Bank AC X2468 is now active. UMN: 9a9a8b8b7c7c6d6d5e5e4f4f3a3a2b2b@ptyes
+
+@ 2026-03-05 11:00 | AX-KOTAKB-S | DEBITED
+Sent Rs.99.00 from Kotak Bank AC X2468 to gaana@hdfcbank on 05-03-26.UPI Ref 606412345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-04-05 11:00 | AX-KOTAKB-S | DEBITED
+Sent Rs.99.00 from Kotak Bank AC X2468 to gaana@hdfcbank on 05-04-26.UPI Ref 609512345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-05-05 11:00 | AX-KOTAKB-S | DEBITED
+Sent Rs.99.00 from Kotak Bank AC X2468 to gaana@hdfcbank on 05-05-26.UPI Ref 612512345678. Not you, https://kotak.com/KBANKT/Fraud
+
+@ 2026-06-05 11:00 | AX-KOTAKB-S | DEBITED
+Sent Rs.99.00 from Kotak Bank AC X2468 to gaana@hdfcbank on 05-06-26.UPI Ref 615612345679. Not you, https://kotak.com/KBANKT/Fraud
+
+# ---------- 19. JioHotstar, paused till the end of Dec ----------
+@ 2026-05-15 19:00 | JD-SBIUPI-S | CREATED
+Dear UPI user, your UPI-Mandate for Rs.299.00 towards JioHotstar is successfully created. Frequency: MONTHLY, UMN: 6b6b7c7c8d8d9e9e0f0f1a1a2b2b3c3c@ybl -SBI
+
+@ 2026-05-15 19:01 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 299.0 on date 15May26 trf to JIOHOTSTAR Refno 613512345678. If not u? call 1800111109. -SBI
+
+@ 2026-06-15 19:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 299.0 on date 15Jun26 trf to JIOHOTSTAR Refno 616612345678. If not u? call 1800111109. -SBI
+
+@ 2026-07-15 19:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 299.0 on date 15Jul26 trf to JIOHOTSTAR Refno 619612345678. If not u? call 1800111109. -SBI
+
+@ 2026-08-15 19:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 299.0 on date 15Aug26 trf to JIOHOTSTAR Refno 622712345678. If not u? call 1800111109. -SBI
+
+@ 2026-09-10 23:00 | JD-SBIUPI-S | PAUSED
+Your UPI AutoPay mandate for JioHotstar (Rs.299.00, Monthly) has been paused till 31-12-2026. UMN: 6b6b7c7c8d8d9e9e0f0f1a1a2b2b3c3c@ybl -SBI
+
+# ---------- 20. Health insurance, yearly, ICICI card ----------
+@ 2026-01-20 12:00 | AD-ICICIT-S | CREATED
+Standing Instruction registered on ICICI Bank Credit Card XX9012 for HDFC ERGO GENERAL INSURANCE, Yearly, Max Amount INR 15,000.00. Mandate ID: ICIC0MD445566. Manage at www.sihub.in/managesi/icici
+
+@ 2026-01-20 12:01 | AD-ICICIT-S | DEBITED
+INR 12,450.00 spent using ICICI Bank Card XX9012 on 20-Jan-26 on HDFC ERGO GENERAL INS. Avl Limit: INR 1,10,550.00. If not you, call 1800 2662/SMS BLOCK 9012 to 9215676766.
+
+# ---------- 21. Times Prime on a RuPay card (NPCI's standard RuPay AutoPay wording) ----------
+@ 2026-08-01 10:00 | CP-CANBNK-S | CREATED
+RuPay AutoPay with Yearly is successfully created towards Times Prime, from 01-08-2026 to 01-08-2029 for upto Rs.1,199.00, MID RPAY0012345.
+
+@ 2026-08-01 10:01 | CP-CANBNK-S | DEBITED
+Your account has been successfully debited with ₹ 1,199.00 on 01-08-2026 towards Times Prime for RuPay AutoPay, MID RPAY0012345
+
+# ---------- 22. A setup that failed. Should never show as a subscription ----------
+@ 2026-10-25 22:00 | VM-AXISBK-S | FAILED_SETUP
+UPI mandate creation for Rs.499.00 towards Disney Plus Hotstar has failed. Reason: declined by user. - Axis Bank
+
+# ---------- Noise. None of this should become a subscription ----------
+@ 2026-09-01 09:00 | VM-PHONPE-P | IGNORE
+Never miss a bill! Set up UPI AutoPay on PhonePe for your electricity bill & win cashback up to Rs.100. T&C apply. https://phon.pe/abc123
+
+@ 2026-09-14 12:00 | AD-AIRTEL-S | IGNORE
+Enable AutoPay for your Airtel Postpaid bill and get Rs.50 off on your next bill. Click https://i.airtel.in/autopay
+
+@ 2026-10-10 22:31 | +919876543210 | IGNORE
+Bhai Netflix ka password bhej, mandate wala account nahi chal raha
+
+@ 2026-09-01 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 15000.0 on date 01Sep26 trf to RAMESH KULKARNI Refno 624412345678. If not u? call 1800111109. -SBI
+
+@ 2026-10-01 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 15000.0 on date 01Oct26 trf to RAMESH KULKARNI Refno 627412345678. If not u? call 1800111109. -SBI
+
+@ 2026-11-01 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 15000.0 on date 01Nov26 trf to RAMESH KULKARNI Refno 630512345678. If not u? call 1800111109. -SBI
+
+@ 2026-10-15 10:00 | AX-HDFCBK-S | IGNORE
+Your HDFC Bank Credit Card XX4321 statement for Oct-26 is generated. Total Amt Due: Rs.27,345.00, Min Amt Due: Rs.1,370.00, Due by 03-Nov-26.
+
+@ 2026-10-31 18:00 | AX-HDFCBK-S | IGNORE
+Your A/c XX8642 is credited with Rs.85,000.00 on 31-10-26 by NEFT from ACME DESIGN STUDIO. Avl Bal Rs.1,02,345.00 -HDFC Bank
+
+@ 2026-11-11 08:00 | VM-AXISBK-S | IGNORE
+Low balance alert! Your A/c no. XX1357 balance is below Rs.1,000. Ensure sufficient balance for upcoming UPI AutoPay debits. - Axis Bank
+
+@ 2026-11-13 10:00 | AX-HDFCBK-S | IGNORE
+Your UPI mandate request of Rs.14,850.00 for IPO - ACME TECH LTD has been successfully accepted. Funds will be blocked till 20-11-2026. -HDFC Bank
+
+# ---------- A format we can't read. Must land in "couldn't read" so nothing is silently missed ----------
+@ 2026-11-06 09:30 | TM-ACTFBR-S | SUSPECT
+AutoPay Alert: Your subscription with ACT Fibernet is set for renewal. Ref: 99881

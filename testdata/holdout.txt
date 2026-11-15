@@ -1,0 +1,169 @@
+# Holdout inbox: wordings the parser was NOT tuned on. "Today" is 15 Nov 2026.
+# Used to measure how well the rules generalise, then to fix gaps with general rules (not per-SMS hacks).
+
+# ---------- SonyLIV on a Kotak credit card ----------
+@ 2026-10-20 07:00 | AX-KOTAKB-S | DEBITED
+INR 499.00 spent on Kotak Credit Card x7788 on 20-Oct-2026 at SONYLIV. Avl limit INR 45,000.00. Not you? Call 18602662666
+
+@ 2026-11-14 07:00 | AX-KOTAKB-S | UPCOMING
+Dear Customer, your Kotak Credit Card xx7788 will be debited for INR 499.00 towards SONYLIV on 20/11/2026 as per the Standing Instruction registered. To view/modify, visit https://www.kotak.com/en/si.html
+
+# ---------- Truecaller by UPI, Yes Bank ----------
+@ 2026-10-01 10:00 | VM-YESBNK-S | CREATED
+Your UPI AutoPay request for INR 59.00 to Truecaller has been approved. Frequency: Monthly. A/c XX4455. -Yes Bank
+
+@ 2026-11-01 10:00 | VM-YESBNK-S | DEBITED
+INR 59.00 debited from A/c XX4455 on 01-Nov-26 towards UPI Mandate to Truecaller. Ref No 630512349876. -Yes Bank
+
+# ---------- Insurance by ACH, Federal Bank ----------
+@ 2026-10-10 06:00 | JM-FEDBNK-S | DEBITED
+Rs 2,500.00 debited from your A/c XX9911 on 10-10-2026 for ACH-DR TATA AIA LIFE INSURANCE. Bal Rs 14,845.67 -Federal Bank
+
+@ 2026-11-10 06:00 | JM-FEDBNK-S | DEBITED
+Rs 2,500.00 debited from your A/c XX9911 on 10-11-2026 for ACH-DR TATA AIA LIFE INSURANCE. Bal Rs 12,345.67 -Federal Bank
+
+# ---------- Hotstar card e-mandate, IndusInd ----------
+@ 2026-09-05 12:00 | AD-INDUSB-S | CREATED
+Dear Customer, e-mandate for Rs.799.00 has been successfully registered for HOTSTAR on your IndusInd Bank Credit Card ending 6655. Frequency: Monthly. Mandate Ref: IBLSI0099887
+
+# ---------- Zomato Gold revoked, AU Bank ----------
+@ 2026-10-14 12:00 | AX-AUBANK-S | REVOKED
+UPI Mandate of Rs 199 for Zomato Gold revoked successfully from your AU Bank A/c XX3030.
+
+# ---------- JioSaavn, PNB ----------
+@ 2026-10-05 08:00 | BZ-PNBSMS-S | DEBITED
+Your a/c XXXXXXXX1122 debited INR 150.00 on 05-10-2026 by UPI AutoPay to JIOSAAVN. Avl bal INR 9,570.15. -PNB
+
+@ 2026-11-05 08:00 | BZ-PNBSMS-S | DEBITED
+Your a/c XXXXXXXX1122 debited INR 150.00 on 05-11-2026 by UPI AutoPay to JIOSAAVN. Avl bal INR 8,420.15. -PNB
+
+# ---------- Netflix by UPI, Bank of Baroda's short "Dr. / Cr." style ----------
+@ 2026-10-07 09:15 | AD-BOBTXN-S | DEBITED
+Rs.399 Dr. from A/C XXXXXX4567 and Cr. to netflix@icici. Ref:628087654321. AvlBal:Rs12,744.00(2026:10:07 09:15:22). Not you? Call 18005700-BOB
+
+@ 2026-11-07 09:15 | AD-BOBTXN-S | DEBITED
+Rs.399 Dr. from A/C XXXXXX4567 and Cr. to netflix@icici. Ref:631087654321. AvlBal:Rs12,345.00(2026:11:07 09:15:22). Not you? Call 18005700-BOB
+
+# ---------- Gaana from Paytm Payments Bank ----------
+@ 2026-11-09 11:00 | VM-PAYTMB-S | DEBITED
+Paid Rs.99 to Gaana from Paytm Payments Bank a/c 9180. UPI Ref: 631312345611. Not you? Call 01204456456
+
+# ---------- Apple on Amex (5-digit card ending) ----------
+@ 2026-09-15 18:01 | AM-AMEXIN-S | DEBITED
+Alert: You've spent INR 1,450.00 on your AMEX card ** 31005 at APPLE SERVICES on 15 September 2026 at 06:01 PM IST. Call 18004190691 if this was not made by you.
+
+@ 2026-10-15 18:01 | AM-AMEXIN-S | DEBITED
+Alert: You've spent INR 1,450.00 on your AMEX card ** 31005 at APPLE SERVICES on 15 October 2026 at 06:01 PM IST. Call 18004190691 if this was not made by you.
+
+# ---------- Google Play on OneCard ----------
+@ 2026-11-12 20:00 | VK-ONECRD-S | DEBITED
+Hi, INR 650.00 spent on your OneCard XX1212 at GOOGLE PLAY on 12 Nov 2026. Avl limit: INR 34,350.
+
+# ---------- Cult.fit on HSBC, "has been used for" ----------
+@ 2026-10-03 07:00 | VM-HSBCIN-S | DEBITED
+Your HSBC credit card ending with 0303 has been used for INR 3,500.00 at CULT.FIT on 03-10-2026.
+
+@ 2026-11-03 07:00 | VM-HSBCIN-S | DEBITED
+Your HSBC credit card ending with 0303 has been used for INR 3,500.00 at CULT.FIT on 03-11-2026.
+
+# ---------- SMS from the company itself, not the bank ----------
+@ 2026-11-14 10:00 | VM-NETFLX-S | UPCOMING
+Your Netflix membership will be renewed on 20 Nov for Rs 199. Manage at netflix.com/account
+
+@ 2026-11-12 09:00 | AD-AIRTEL-S | UPCOMING
+Your Airtel Postpaid bill of Rs 699 will be auto-paid on 22-Nov-2026 via UPI AutoPay. Ensure sufficient balance.
+
+@ 2026-11-01 09:00 | JK-JIOINF-S | DEBITED
+JioHome autopay of Rs 999 successful for 9876XXXXXX on 01-Nov-2026.
+
+@ 2026-11-02 09:00 | VK-TINDER-S | REVOKED
+Your Tinder Gold subscription has been cancelled. You will not be charged again.
+
+# ---------- More bank wordings ----------
+@ 2026-10-18 06:00 | AX-KOTAKB-S | DEBITED
+Rs.149.00 debited from your Kotak Bank a/c XX2468 via UPI AutoPay for SPOTIFY on 18-Oct-26. UPI Ref no 632212345678.
+
+@ 2026-11-05 07:00 | AD-ICICIB-S | DEBITED
+ICICI Bank Acct XX123 debited for Rs 199.00 on 05-Nov-26; Netflix Entertainment credited. UPI:631012345678. Call 18002662 for dispute. SMS BLOCK 123 to 9215676766.
+
+@ 2026-10-05 07:00 | AD-ICICIB-S | CREATED
+Dear Customer, UPI-Mandate is successfully created towards Netflix Entertainment Services for Rs. 199.00 on ICICI Bank Acct XX123. UMN: 0bcd1234ef5678ab9012cd3456ef7890@icici
+
+@ 2026-11-14 08:00 | AX-HDFCBK-S | UPCOMING
+Alert: Your A/c XX8642 will be debited with Rs.649.00 on 20/11/2026 for UPI AutoPay towards Disney+ Hotstar. UMN-12ab34cd56ef78ab90cd12ef34ab56cd@okhdfcbank
+
+@ 2026-11-14 08:00 | SB-SBIINB-S | UPCOMING
+Dear Customer, Your SBI Debit Card XX5566 will be charged Rs 1,234.00 on 25-11-2026 for LIC OF INDIA as per the e-mandate. -SBI
+
+@ 2026-11-10 08:00 | JM-FEDBNK-S | CREATED
+UPI Mandate Registered
+Payee: GROWW
+Amount: Rs 1000.00
+Frequency: MONTHLY
+Start: 10-11-2026
+-Federal Bank
+
+@ 2026-11-03 01:00 | AD-ICICIT-S | DEBITED
+Transaction of USD 9.99 on your ICICI Bank Credit Card XX9012 at MIDJOURNEY INC on 03-Nov-26.
+
+# No date at all, so it must go to "couldn't read" rather than get a made-up date.
+@ 2026-11-04 12:00 | BT-ALTBLJ-S | SUSPECT
+Your recurring payment of Rs.299 to ALTBALAJI will be processed shortly.
+
+# ---------- Noise ----------
+@ 2026-11-04 20:00 | VM-SWIGGY-S | IGNORE
+Your Swiggy order of Rs 342 has been delivered. Enjoy your meal!
+
+@ 2026-11-04 20:05 | AX-HDFCBK-S | IGNORE
+Rs.500 credited to your a/c XX5678 from GOOGLE PAY cashback. Avl bal Rs 2,000.
+
+@ 2026-11-05 10:00 | AX-HDFCBK-S | IGNORE
+Set up AutoPay on your HDFC Bank Credit Card & never miss a payment. Know more: hdfcbank.com/autopay
+
+@ 2026-11-06 10:00 | AX-HDFCBK-T | IGNORE
+Your OTP to cancel mandate for NETFLIX is 456789. Do not share.
+
+@ 2026-11-07 10:00 | AX-HDFCBK-S | IGNORE
+Dear Customer, UPI transaction of Rs 250.00 to RAHUL SHARMA failed due to technical error. Amount if debited will be refunded in 48 hrs.
+
+# ---------- Real-inbox traps: reminders to pay by hand, savings, the CC bill, a daily chai ----------
+@ 2026-11-10 10:00 | VM-HDFCEG-S | IGNORE
+Your HDFC ERGO policy 2312XXXX45 is due for renewal on 20-Dec-2026. Renew now at hdfcergo.com/renew to stay protected.
+
+@ 2026-11-11 10:00 | AX-BAJAJF-S | IGNORE
+Your EMI of Rs 2,345 for loan P400ABC1234567 is due on 02-12-2026. Please maintain sufficient balance in your bank account.
+
+@ 2026-11-05 11:00 | VM-HDFCMF-S | IGNORE
+Your SIP of Rs 5,000 in HDFC Flexi Cap Fund for folio 1234XXXX has been processed. Units will be allotted at applicable NAV.
+
+@ 2026-11-12 09:00 | AX-AMAZON-S | UPCOMING
+Your Prime membership will renew on 12 Mar 2027 for Rs 1,499. To change, visit Your Account.
+
+@ 2026-11-03 09:00 | AX-HDFCBK-S | UPCOMING
+AutoPay alert: Rs 27,345.00 for your HDFC Bank Credit Card bill will be debited from your A/c XX8642 on 05-11-2026.
+
+@ 2026-10-07 09:00 | JD-SBIINB-S | DEBITED
+Your RD installment of Rs 3,000.00 has been debited from A/C X5678 on 07-10-2026 as per standing instruction. -SBI
+
+@ 2026-11-07 09:00 | JD-SBIINB-S | DEBITED
+Your RD installment of Rs 3,000.00 has been debited from A/C X5678 on 07-11-2026 as per standing instruction. -SBI
+
+@ 2026-11-11 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 20.0 on date 11Nov26 trf to SHREE KRISHNA TEA HOUSE Refno 631512340001. If not u? call 1800111109. -SBI
+
+@ 2026-11-12 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 20.0 on date 12Nov26 trf to SHREE KRISHNA TEA HOUSE Refno 631612340002. If not u? call 1800111109. -SBI
+
+@ 2026-11-13 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 20.0 on date 13Nov26 trf to SHREE KRISHNA TEA HOUSE Refno 631712340003. If not u? call 1800111109. -SBI
+
+@ 2026-11-14 08:00 | JD-SBIUPI-S | DEBITED
+Dear UPI user A/C X5678 debited by 20.0 on date 14Nov26 trf to SHREE KRISHNA TEA HOUSE Refno 631812340004. If not u? call 1800111109. -SBI
+
+# ---------- Debit alerts that mention OTP in the footer must still be read ----------
+@ 2026-11-02 07:00 | AX-HDFCBK-S | DEBITED
+Spent Rs.199 On HDFC Bank Card 4321 At AUDIBLE On 2026-11-02:07:00:10. Never share your OTP, PIN or CVV with anyone.
+
+# ---------- A short-code sender is a service, not a person ----------
+@ 2026-11-01 07:00 | 5676791 | DEBITED
+Rs.299.00 spent on your SBI Credit Card ending 3344 at YOUTUBE PREMIUM on 01/11/26. Trxn. not done by you? Report at https://sbicard.com/Dispute
