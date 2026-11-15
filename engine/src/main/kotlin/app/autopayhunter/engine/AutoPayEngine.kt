@@ -73,7 +73,7 @@ class AutoPayEngine(
             }
         }
         .thenBy { if (it.yearlyCost?.isInr == false) 1 else 0 }
-        .thenByDescending { it.yearlyCost?.minor ?: it.amount?.minor ?: 0 }
+        .thenByDescending { it.yearlyCost?.minor ?: it.amount?.minor ?: 0L }
 
     private fun totals(subs: List<Subscription>): Totals {
         val active = subs.filter { it.status == Status.ACTIVE && it.confidence != Confidence.LOW }

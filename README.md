@@ -1,8 +1,11 @@
-# AutoPay Hunter: the engine
+# AutoNope (was AutoPay Hunter)
+
+**Test APK:** https://github.com/shraddheyadesigns/autopay-hunter/releases/download/latest/AutoNope.apk
+Built by GitHub Actions on every push. Asks for SMS only, no internet. CI checks that on every build.
 
 Reads bank SMS on the phone and finds everything that auto-debits you: UPI AutoPay, card standing instructions, NACH bank mandates, free trials, and repeat card charges with no mandate at all. Then it says it in plain words and tells you exactly where to cancel.
 
-No UI yet. This is the engine, built first, as planned. Picking this up in a new chat? Read `CONTEXT.md` first.
+The engine is in `engine/`. A plain test app that runs it on your real inbox is in `app/`. Picking this up in a new chat? Read `CONTEXT.md` first.
 
 ## Why it's still worth building
 

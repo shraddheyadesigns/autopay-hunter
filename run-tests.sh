@@ -2,7 +2,8 @@
 # Compiles the engine with plain kotlinc (no Gradle needed) and runs every check:
 #   1. testdata/corpus.txt   the main test inbox: every SMS + every subscription + user marks
 #   2. testdata/holdout.txt  wordings the rules weren't tuned on
-#   3. noise                 the main inbox buried in 5,000 junk SMS must give the same result
+#   3. both     corpus + holdout scanned together must not crash
+#   4. noise                 the main inbox buried in 5,000 junk SMS must give the same result
 # Needs a JDK and the Kotlin compiler (kotlinc). Override with KOTLINC=... and KOTLIN_STDLIB=... if yours live elsewhere.
 cd "$(dirname "$0")"
 KOTLINC="${KOTLINC:-kotlinc}"
@@ -23,7 +24,11 @@ $JAVA app.autopayhunter.engine.CorpusCheck testdata/corpus.txt --quiet 2>/dev/nu
 echo "2. Holdout inbox"
 $JAVA app.autopayhunter.engine.CorpusCheck testdata/holdout.txt --quiet 2>/dev/null || fail=1
 
-echo "3. Buried in noise"
+echo "3. Both inboxes in one scan (catches crashes when the two mix)"
+if $JAVA app.autopayhunter.cli.CliKt testdata/corpus.txt testdata/holdout.txt --today 2026-11-15 >/dev/null 2>build/mixed.err; then echo "ALL CHECKS PASSED"
+else echo "FAILED: the combined scan crashed"; head -5 build/mixed.err; fail=1; fi
+
+echo "4. Buried in noise"
 [ -f testdata/noise.txt ] || (cd testdata && python3 make_noise.py >/dev/null)
 $JAVA app.autopayhunter.cli.CliKt testdata/corpus.txt --today 2026-11-15 2>/dev/null | grep -E '^(\*|==|\?)' > build/clean.txt
 $JAVA app.autopayhunter.cli.CliKt testdata/corpus.txt testdata/noise.txt --today 2026-11-15 2>/dev/null | grep -E '^(\*|==|\?)' > build/noisy.txt

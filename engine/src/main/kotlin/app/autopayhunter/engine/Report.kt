@@ -102,7 +102,7 @@ object Anonymizer {
         s = s.replace(Regex("""(?i)\b([0-9]{10}|[a-z]+\.?[a-z]*[0-9]{2,})@([a-z]+)""")) { "someone@" + it.groupValues[2] }
         // Masked account and card digits.
         s = s.replace(Regex("""(?i)([xX*•]{1,})([0-9]{3,6})\b""")) { it.groupValues[1] + "0".repeat(it.groupValues[2].length) }
-        s = s.replace(Regex("""(?i)(card|a/c|acct|account|ac)(\s*(?:no\.?|ending(?: with)?)?\s*)([0-9]{4})\b""")) { it.groupValues[1] + it.groupValues[2] + "0000" }
+        s = s.replace(Regex("""(?i)(card|cc|dc|a/c|acct|account|ac)(\s*(?:no\.?|ending(?: with)?)?\s*)([0-9]{4})\b""")) { it.groupValues[1] + it.groupValues[2] + "0000" }
         // Long numbers: reference numbers, phone numbers, IDs.
         s = s.replace(Regex("""\b[0-9]{6,}\b""")) { "0".repeat(it.value.length) }
         s = s.replace(Regex("""(?i)\b([a-z]{2,6}[0-9][a-z0-9]{6,})\b""")) { it.value.take(4) + "0".repeat(it.value.length - 4) }

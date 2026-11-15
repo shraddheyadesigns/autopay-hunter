@@ -66,7 +66,20 @@ Reads bank SMS on the phone and finds everything that auto-debits you, then says
 
 ---
 
-## Next: the test APK (nothing built yet)
+## Name: AutoNope
+
+- Picked 16 Nov 2026 (over Paytrap, Caughtopay, Debitective). App ID `com.shady.autonope`, permanent
+- Repo name and engine package (`app.autopayhunter.engine`) stay as they are
+
+## Test APK (built 16 Nov 2026)
+
+- `app/` module, package `com.shady.autonope`. Scan screen, then Report screen with Copy report, Copy unreadable ones (masked), and a "Look for a company" search that shows every SMS mentioning a word and what the engine did with it
+- Link: `https://github.com/shraddheyadesigns/autopay-hunter/releases/download/latest/AutoNope.apk`
+- Signing key: PKCS12, alias `autonope`, in Secrets as `KEYSTORE_B64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`. Shady keeps the backup
+- CI: engine tests (now 4, the new one scans corpus + holdout together), signed release with R8, permission guard (fails on anything but READ_SMS), publish to `latest`
+- Engine fixes found while building: a sort crash when an autopay had no amount (`0` vs `0L`), and the Anonymizer now masks card digits after "CC"/"DC"
+
+## Original test APK plan
 
 Goal: run the engine on his real inbox. Done when it finds every autopay on his phone with no misses.
 
